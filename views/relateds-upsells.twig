@@ -1,0 +1,40 @@
+{% if up_sells or related_products %}
+  <section class="upsells-related uk-section uk-section-muted uk-section-small theme-border-top">
+    <div class="uk-container">
+      {% if up_sells %}
+        <div class="product-upsells">
+          <h2 class="uk-h3">{{ _x('You may also like...', 'Upsell products', 'related-upsells')|e('esc_html') }}</h2>
+          <div id="slideshow_upsells" class="swiper-container">
+            <div class="swiper-wrapper">
+              {% for post in up_sells %}
+                <div class="swiper-slide">
+                  {% include 'tease-product-list.twig' %}
+                </div>
+              {% endfor %}
+            </div>
+            {% if up_sells|length > 1 %}
+              <div class="swiper-pagination"></div>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+      {% if related_products %}
+        <div class="product-related">
+          <h2 class="uk-h3">{{ _x('Related Competitions', 'Related products', 'related-upsells')|e('esc_html') }}</h2>
+          <div id="slideshow_related" class="swiper-container">
+            <div class="swiper-wrapper">
+              {% for post in related_products %}
+                <div class="swiper-slide">
+                  {% include 'tease-product-list.twig' %}
+                </div>
+              {% endfor %}
+            </div>
+            {% if related_products|length > 1 %}
+              <div class="swiper-pagination"></div>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </section>
+{% endif %}
