@@ -20,24 +20,25 @@ class RelatedUpsells extends Timber {
   
   public function relateds_upsells_assets() {
     wp_enqueue_style(
-      'related-upsells',
-      RELATED_UPSELLS_URL . 'public/css/related-upsells.css'
-    );
-    wp_enqueue_style(
-      'related-upsells-swiper',
+      'swiper-js',
       RELATED_UPSELLS_URL . 'public/css/swiper-bundle.min.css'
     );
     wp_enqueue_script(
-      'related-upsells-swiper',
+      'swiper-js',
       RELATED_UPSELLS_URL . 'public/js/swiper-bundle.min.js',
       '',
       '1.0.0',
       true
     );
+    wp_enqueue_style(
+      'related-upsells',
+      RELATED_UPSELLS_URL . 'public/css/related-upsells.css',
+      array('swiper-js')
+    );
     wp_enqueue_script(
       'related-upsells',
       RELATED_UPSELLS_URL . 'public/js/related-upsells.js',
-      'jquery',
+      array('jquery', 'swiper-js'),
       '1.0.0',
       true
     );

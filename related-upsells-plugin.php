@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Related & Upsells for Woocommerce
+Plugin Name: Related & Upsells for Woocommerce by RMcC
 Plugin URI: #
 Description: Adds related & upsell products to the product page @ theme location rmcc_after_product_details
 Version: 1.0.0
