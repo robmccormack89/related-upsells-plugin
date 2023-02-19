@@ -1,4 +1,4 @@
-# Copyright (C) 2021 related-upsells
+# Copyright (C) 2023 related-upsells
 # This file is distributed under the same license as the related-upsells package.
 msgid ""
 msgstr ""
@@ -13,12 +13,14 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: views/temp/relateds-upsells.php:6
-msgctxt "Upsell products"
-msgid "You may also like..."
+#: woocommerce/cart/cross-sells.php:29
+msgid "You may be interested in&hellip;"
 msgstr ""
 
-#: views/temp/relateds-upsells.php:23
-msgctxt "Related products"
-msgid "Related Competitions"
+#: woocommerce/single-product/related.php:25
+msgid "Related products"
+msgstr ""
+
+#: woocommerce/single-product/up-sells.php:25
+msgid "You may also like&hellip;"
 msgstr ""

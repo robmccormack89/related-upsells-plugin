@@ -1,0 +1,43 @@
+<style>
+
+</style>
+
+<section class="related products">
+
+	{% if heading %}
+		<h2>{{ heading }}</h2>
+	{% endif %}
+
+  <div class="uk-position-relative uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
+    <div class="swiper swiper-related">
+      <ul class="swiper-wrapper products columns-{{cols}}">
+        {# {% do fn('woocommerce_product_loop_start') %} #}
+        {% for related_product in related_products %}
+          {% set post_object = fn('get_post', related_product.get_id()) %} {# $post_object = get_post( $related_product->get_id() ); #}
+          {% do fn('timber_setup_postdata', post_object) %} {# setup_postdata( $GLOBALS['post'] =& $post_object ); #}
+          {% do fn('wc_get_template_part', 'content', 'product') %} {# wc_get_template_part( 'content', 'product' ); #}
+        {% endfor %}
+      </ul>
+      {# {% do fn('woocommerce_product_loop_end') %} #}
+    </div>
+    <div class="swiper-pagination-related uk-margin-auto-left uk-margin-auto-right"></div>
+  </div>
+
+</div>
+
+<script>
+  var related_swiper = new Swiper('.swiper-related', {
+    slidesPerView: {{ cols }},
+    spaceBetween: {{ (cols == 1) ? 0 : 25 }},
+    centerInsufficientSlides: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: true,
+    },
+    // init: false,
+    pagination: {
+      el: '.swiper-pagination-related',
+      dynamicBullets: true
+    }
+  });
+</script>

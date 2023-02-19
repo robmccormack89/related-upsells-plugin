@@ -1,3 +1,22 @@
-#slideshow_upsells {
-  margin-bottom: 30px;
-}
+.woocommerce ul.products.swiper-wrapper,
+.woocommerce-page ul.products.swiper-wrapper {
+    flex-wrap: unset!important;
+    justify-content: unset!important;
+    align-items: unset!important;
+  }
+  .woocommerce ul.products.swiper-wrapper li.product.swiper-slide, 
+  .woocommerce-page ul.products.swiper-wrapper li.product.swiper-slide {
+    display: block;
+    float: unset;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .related *, 
+    .upsells *, 
+    .cross-sells * {
+      animation-duration: .2s !important;
+      transition-duration: .2s !important;
+    }
+  }
